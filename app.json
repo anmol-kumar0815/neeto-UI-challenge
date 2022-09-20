@@ -1,5 +1,5 @@
 {
-  "name": "neetouichallenge",
+  "name": "NeetoUiChallenge",
   "scripts": {
     "postdeploy": "bundle exec rake db:migrate"
   },

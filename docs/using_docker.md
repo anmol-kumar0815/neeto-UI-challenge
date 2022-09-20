@@ -3,12 +3,12 @@
 ## Docker for development environment
 
 - Install [Docker](https://docs.docker.com/get-docker/).
-- Clone this repo by running `git clone https://github.com/bigbinary/neeto-ui-challenge.git`.
-- `cd neeto-ui-challenge`
+- Clone this repo by running `git clone https://github.com/bigbinary/neetouichallenge.git`.
+- `cd neetouichallenge`
 - If using it for the first time, run `docker-compose build` to build the images.
 - Run `docker-compose run --rm web bin/setup` to create and seed the database.
 - Run `docker-compose up` to start the application and get things up and running.
-- From now onwards, we can just run `docker-compose up` from within the root of the `neeto-ui-challenge` directory to bring up the application.
+- From now onwards, we can just run `docker-compose up` from within the root of the `neetouichallenge` directory to bring up the application.
 
 #### Build images without using cache
 
@@ -19,13 +19,13 @@ While re-building images, docker tries to find it's layers in the cache, which m
 docker-compose build --no-cache
 ```
 
-### Steps to remove docker data related to neeto-ui-challenge
+### Steps to remove docker data related to neetouichallenge
 
-Run `docker ps -a | grep neeto-ui-challenge` to get containers related to neeto-ui-challenge. Then run `docker rm -f $(docker ps -a | grep neeto-ui-challenge | awk '{print $1}')` to delete them.
+Run `docker ps -a | grep neetouichallenge` to get containers related to neetouichallenge. Then run `docker rm -f $(docker ps -a | grep neetouichallenge | awk '{print $1}')` to delete them.
 
-Run `docker images | grep neeto-ui-challenge` to get images related to neeto-ui-challenge. Then run `docker rmi -f $(docker images | grep neeto-ui-challenge | awk '{print $3}')` to delete them.
+Run `docker images | grep neetouichallenge` to get images related to neetouichallenge. Then run `docker rmi -f $(docker images | grep neetouichallenge | awk '{print $3}')` to delete them.
 
-Run `docker volume ls | grep neeto-ui-challenge` to get volumes related to neeto-ui-challenge. Then run `docker volume rm -f $(docker volume ls | grep neeto-ui-challenge | awk '{print $2}')` to delete them.
+Run `docker volume ls | grep neetouichallenge` to get volumes related to neetouichallenge. Then run `docker volume rm -f $(docker volume ls | grep neetouichallenge | awk '{print $2}')` to delete them.
 
 ### Steps to nuke all data and start fresh
 

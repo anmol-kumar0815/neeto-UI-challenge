@@ -1,11 +1,11 @@
-[![Build Status](https://bigbinary.semaphoreci.com/badges/neeto-ui-challenge/branches/master.svg?style=shields)](https://bigbinary.semaphoreci.com/projects/neeto-ui-challenge)
+[![Build Status](https://bigbinary.semaphoreci.com/badges/neetouichallenge/branches/master.svg?style=shields)](https://bigbinary.semaphoreci.com/projects/neetouichallenge)
 
 Made by the team at [BigBinary](https://bigbinary.com), this is a base project to quickly spin up a
 Rails application built with opinions of BigBinary style of working.
 
 ## Local Development Setup
 
-Clone this repo by running `git clone https://github.com/bigbinary/neeto-ui-challenge.git`.
+Clone this repo by running `git clone https://github.com/bigbinary/neetouichallenge.git`.
 
 Install the [Node.js](https://nodejs.org) version `v16.5` which we have specified inside the `.node-version` file.
 
@@ -30,16 +30,16 @@ Visit http://localhost:3000 and login with email `oliver@example.com` and passwo
 
 ## Using docker for development
 
-Follow the instructions mentioned [here](https://github.com/bigbinary/neeto-ui-challenge/blob/master/docs/using_docker.md) to use docker for development.
+Follow the instructions mentioned [here](https://github.com/bigbinary/neetouichallenge/blob/master/docs/using_docker.md) to use docker for development.
 
-## Replace neeto-ui-challenge with your project name
+## Replace neetouichallenge with your project name
 
 Let's say that the project name is `Pump`. Execute the command below to
-replace all occurrences of `neeto-ui-challenge` with `Pump`.
+replace all occurrences of `neetouichallenge` with `Pump`.
 
 ```bash
-perl -pi -w -e 's/neeto-ui-challenge/Pump/g;' $(git ls-files)
-perl -pi -w -e 's/neeto-ui-challenge/Pump/g;' $(git ls-files)
+perl -pi -w -e 's/neetouichallenge/Pump/g;' $(git ls-files)
+perl -pi -w -e 's/neetouichallenge/Pump/g;' $(git ls-files)
 ```
 
 ## Features
@@ -71,4 +71,4 @@ automatically deploys an application for that branch.
 
 ![BigBinary](https://raw.githubusercontent.com/bigbinary/bigbinary-assets/press-assets/PNG/logo-light-solid-small.png?raw=true)
 
-neeto-ui-challenge is maintained by [BigBinary](https://www.BigBinary.com). BigBinary is a software consultancy company. We build web and mobile applications using Ruby on Rails, React.js, React Native and Node.js.
+neetouichallenge is maintained by [BigBinary](https://www.BigBinary.com). BigBinary is a software consultancy company. We build web and mobile applications using Ruby on Rails, React.js, React Native and Node.js.

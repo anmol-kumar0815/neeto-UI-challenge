@@ -63,7 +63,7 @@ const Notes = () => {
           }}
         />
         {notes.length ? (
-          <Box notes={notes} />
+          <Box fetchNotes={fetchNotes} notes={notes} />
         ) : (
           <EmptyState
             image={EmptyNotesListImage}

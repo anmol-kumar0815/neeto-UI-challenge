@@ -7,8 +7,8 @@ import { Container, Header } from "neetoui/layouts";
 import notesApi from "apis/notes";
 import EmptyState from "components/Common/EmptyState";
 
-import Box from "./Box";
 import DeleteAlert from "./DeleteAlert";
+import List from "./List";
 import Menu from "./Menu";
 import NewNotePane from "./Pane/Create";
 
@@ -63,7 +63,7 @@ const Notes = () => {
           }}
         />
         {notes.length ? (
-          <Box fetchNotes={fetchNotes} notes={notes} />
+          <List fetchNotes={fetchNotes} notes={notes} />
         ) : (
           <EmptyState
             image={EmptyNotesListImage}

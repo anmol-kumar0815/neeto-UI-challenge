@@ -26,7 +26,9 @@ const Note = ({ fetchNotes, note }) => {
         <Dropdown buttonStyle="text" icon={MenuVertical}>
           <Menu>
             <MenuItem.Button>Edit</MenuItem.Button>
-            <MenuItem.Button onClick={handleDelete}>Delete</MenuItem.Button>
+            <MenuItem.Button style="danger" onClick={handleDelete}>
+              Delete
+            </MenuItem.Button>
           </Menu>
         </Dropdown>
       </div>

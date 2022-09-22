@@ -8,7 +8,7 @@ export const NOTES_FORM_INITIAL_FORM_VALUES = {
   tags: [],
 };
 
-export const CONTACT = buildSelectOptions(["Admin", "Non Admin"]);
+export const CONTACTS = buildSelectOptions(["Admin", "Non Admin"]);
 
 export const TAGS = buildSelectOptions([
   "Getting Started",
@@ -25,8 +25,8 @@ export const NOTES_FORM_VALIDATION_SCHEMA = yup.object().shape({
     .object()
     .nullable()
     .shape({
-      label: yup.string().oneOf(CONTACT.map(contact => contact.label)),
-      value: yup.string().oneOf(CONTACT.map(contact => contact.value)),
+      label: yup.string().oneOf(CONTACTS.map(contact => contact.label)),
+      value: yup.string().oneOf(CONTACTS.map(contact => contact.value)),
     })
     .required("Assigned contact is required."),
   tags: yup

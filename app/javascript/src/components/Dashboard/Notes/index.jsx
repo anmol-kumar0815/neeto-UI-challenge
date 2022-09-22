@@ -8,8 +8,8 @@ import notesApi from "apis/notes";
 import EmptyState from "components/Common/EmptyState";
 
 import DeleteAlert from "./DeleteAlert";
-import List from "./List";
 import Menu from "./Menu";
+import Note from "./Note";
 import NewNotePane from "./Pane/Create";
 
 const Notes = () => {
@@ -62,8 +62,12 @@ const Notes = () => {
             onChange: e => setSearchTerm(e.target.value),
           }}
         />
-        {notes.length ? (
-          <List fetchNotes={fetchNotes} notes={notes} />
+        {notes.length > 0 ? (
+          <div className="flex w-full flex-col">
+            {notes.map(note => (
+              <Note fetchNotes={fetchNotes} key={note.id} note={note} />
+            ))}
+          </div>
         ) : (
           <EmptyState
             image={EmptyNotesListImage}

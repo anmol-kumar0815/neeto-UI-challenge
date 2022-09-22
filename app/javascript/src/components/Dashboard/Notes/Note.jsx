@@ -11,6 +11,7 @@ const Note = ({ fetchNotes, note }) => {
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [selectedNote, setSelectedNote] = useState({});
   const [selectedNoteIds, setSelectedNoteIds] = useState([]);
+  const { Menu, MenuItem } = Dropdown;
 
   const handleDelete = () => {
     setShowDeleteAlert(true);
@@ -23,8 +24,10 @@ const Note = ({ fetchNotes, note }) => {
       <div className="flex justify-between text-xl font-bold">
         <Typography style="h3">{note.title}</Typography>
         <Dropdown buttonStyle="text" icon={MenuVertical}>
-          <li>Edit</li>
-          <li onClick={handleDelete}>Delete</li>
+          <Menu>
+            <MenuItem.Button>Edit</MenuItem.Button>
+            <MenuItem.Button onClick={handleDelete}>Delete</MenuItem.Button>
+          </Menu>
         </Dropdown>
       </div>
       {showDeleteAlert && (
@@ -36,16 +39,14 @@ const Note = ({ fetchNotes, note }) => {
           onClose={() => setShowDeleteAlert(false)}
         />
       )}
-      <div className="mb-4 flex text-left">
-        <Typography style="body3">{note.description}</Typography>
-      </div>
+      <Typography style="body3">{note.description}</Typography>
       <div className="flex items-center justify-between">
         <Button
           className="mx-2 mt-3"
           label="Getting Started"
           style="secondary"
         />
-        <span className="flex justify-between">
+        <div className="flex justify-between">
           <Clock className="mx-1 mt-3" />
           <Tooltip
             content={formatDateToWeekDay(note.created_at)}
@@ -63,7 +64,7 @@ const Note = ({ fetchNotes, note }) => {
               imageUrl: "https://i.pravatar.cc/300",
             }}
           />
-        </span>
+        </div>
       </div>
     </Container>
   );

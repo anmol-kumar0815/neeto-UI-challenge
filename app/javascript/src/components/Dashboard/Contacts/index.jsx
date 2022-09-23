@@ -1,9 +1,18 @@
 import React, { useState } from "react";
 
-import { Button, Table, Pagination, Alert, Toastr } from "neetoui";
+import {
+  Button,
+  Table,
+  Pagination,
+  Alert,
+  Toastr,
+  Pane,
+  Typography,
+} from "neetoui";
 import { Container, Header } from "neetoui/layouts";
 
-import { CONTACT_DETAILS_DATA } from "./constant";
+import { CONTACT_DETAILS_DATA } from "./constants";
+import FormPane from "./Form";
 import Menu from "./Menu";
 import { buildContactTableColumnData } from "./util";
 
@@ -11,20 +20,29 @@ const Contacts = () => {
   const [showMenu, setShowMenu] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [showAlert, setShowAlert] = useState(false);
+  const [showPane, setShowPane] = useState(false);
 
   const handleDelete = () => {
     setShowAlert(false);
     Toastr.success("Contact deleted successfully.");
   };
 
+  const onClose = () => setShowPane(false);
+
   return (
     <>
       <Menu showMenu={showMenu} />
       <Container>
         <Header
-          actionBlock={<Button icon="ri-add-line" label="Add New Contact" />}
           menuBarToggle={() => setShowMenu(prevState => !prevState)}
           title="Contacts"
+          actionBlock={
+            <Button
+              icon="ri-add-line"
+              label="Add New Contact"
+              onClick={() => setShowPane(preValue => !preValue)}
+            />
+          }
           searchProps={{
             value: searchTerm,
             onChange: e => setSearchTerm(e.target.value),
@@ -45,6 +63,14 @@ const Contacts = () => {
           onClose={() => setShowAlert(false)}
           onSubmit={() => handleDelete()}
         />
+        <Pane isOpen={showPane} onClose={onClose}>
+          <Pane.Header>
+            <Typography style="h2" weight="semibold">
+              Create a New Contact
+            </Typography>
+          </Pane.Header>
+          <FormPane onClose={onClose} />
+        </Pane>
       </Container>
     </>
   );

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Formik, Form } from "formik";
+import { Formik, Form as NeetoUiForm } from "formik";
 import { Button, Pane, Toastr } from "neetoui";
 import { Input, Select } from "neetoui/formik";
 
@@ -10,7 +10,7 @@ import {
   ROLES,
 } from "./constants";
 
-const FormPane = ({ onClose }) => {
+const Form = ({ onClose }) => {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = () => {
@@ -28,7 +28,7 @@ const FormPane = ({ onClose }) => {
       onSubmit={handleSubmit}
     >
       {({ isSubmitting }) => (
-        <Form className="w-full">
+        <NeetoUiForm className="w-full">
           <Pane.Body className="space-y-6">
             <div className="flex w-full flex-row space-x-3">
               <Input
@@ -82,10 +82,10 @@ const FormPane = ({ onClose }) => {
               onClick={onClose}
             />
           </Pane.Footer>
-        </Form>
+        </NeetoUiForm>
       )}
     </Formik>
   );
 };
 
-export default FormPane;
+export default Form;

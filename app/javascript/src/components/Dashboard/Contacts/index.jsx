@@ -12,7 +12,7 @@ import {
 import { Container, Header } from "neetoui/layouts";
 
 import { CONTACT_DETAILS_DATA } from "./constants";
-import FormPane from "./Form";
+import Form from "./Form";
 import Menu from "./Menu";
 import { buildContactTableColumnData } from "./utils";
 
@@ -69,7 +69,7 @@ const Contacts = () => {
               Create a New Contact
             </Typography>
           </Pane.Header>
-          <FormPane onClose={onClose} />
+          <Form onClose={onClose} />
         </Pane>
       </Container>
     </>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Button, Table, Pagination } from "neetoui";
+import { Button, Table, Pagination, Alert, Toastr } from "neetoui";
 import { Container, Header } from "neetoui/layouts";
 
 import { CONTACT_DETAILS_DATA } from "./constant";
@@ -10,6 +10,12 @@ import { buildContactTableColumnData } from "./util";
 const Contacts = () => {
   const [showMenu, setShowMenu] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
+  const [showAlert, setShowAlert] = useState(false);
+
+  const handleDelete = () => {
+    setShowAlert(false);
+    Toastr.success("Contact deleted successfully.");
+  };
 
   return (
     <>
@@ -26,12 +32,19 @@ const Contacts = () => {
         />
         <Table
           allowRowClick
-          columnData={buildContactTableColumnData()}
+          columnData={buildContactTableColumnData(setShowAlert)}
           rowData={CONTACT_DETAILS_DATA}
           onRowClick={() => {}}
           onRowSelect={() => {}}
         />
         <Pagination count={50} navigate={() => {}} pageNo={3} pageSize={10} />
+        <Alert
+          isOpen={showAlert}
+          message="Are you sure you want to delete contact? These changes cannot be undone."
+          title="Delete Contact"
+          onClose={() => setShowAlert(false)}
+          onSubmit={() => handleDelete()}
+        />
       </Container>
     </>
   );

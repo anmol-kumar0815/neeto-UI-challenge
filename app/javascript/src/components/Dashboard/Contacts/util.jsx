@@ -5,7 +5,7 @@ import { Avatar, Typography, Dropdown } from "neetoui";
 
 const { Menu, MenuItem } = Dropdown;
 
-export const buildContactTableColumnData = () => [
+export const buildContactTableColumnData = setShowAlert => [
   {
     title: "Name & Role",
     dataIndex: "firstName",
@@ -47,7 +47,9 @@ export const buildContactTableColumnData = () => [
       <Dropdown buttonStyle="text" icon={MenuHorizontal}>
         <Menu>
           <MenuItem.Button>Edit</MenuItem.Button>
-          <MenuItem.Button style="danger">Delete</MenuItem.Button>
+          <MenuItem.Button style="danger" onClick={() => setShowAlert(true)}>
+            Delete
+          </MenuItem.Button>
         </Menu>
       </Dropdown>
     ),

@@ -5,7 +5,7 @@ import { Container, Header } from "neetoui/layouts";
 
 import { CONTACT_DETAILS_DATA } from "./constant";
 import Menu from "./Menu";
-import { buildContactTableColumnData } from "./util";
+import { buildContactTableColumnData } from "./utils";
 
 const Contacts = () => {
   const [showMenu, setShowMenu] = useState(true);

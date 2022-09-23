@@ -58,7 +58,7 @@ const Contacts = () => {
         <Pagination count={50} navigate={() => {}} pageNo={3} pageSize={10} />
         <Alert
           isOpen={showAlert}
-          message="Are you sure you want to delete contact? These changes cannot be undone."
+          message="Are you sure you want to delete this contact? These changes cannot be undone."
           title="Delete Contact"
           onClose={() => setShowAlert(false)}
           onSubmit={() => handleDelete()}

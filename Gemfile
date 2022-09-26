@@ -105,3 +105,5 @@ group :test do
 end
 
 gem "sqlite3", "~> 1.4", group: [:development, :test]
+
+gem "pg", group: [:production]
